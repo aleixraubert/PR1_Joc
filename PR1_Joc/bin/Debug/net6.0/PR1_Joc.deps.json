@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "PR1_Joc/1.0.0": {
+        "runtime": {
+          "PR1_Joc.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PR1_Joc/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
