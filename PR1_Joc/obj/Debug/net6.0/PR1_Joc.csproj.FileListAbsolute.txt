@@ -12,3 +12,17 @@ C:\Users\raube\source\repos\PR1_Joc\PR1_Joc\obj\Debug\net6.0\refint\PR1_Joc.dll
 C:\Users\raube\source\repos\PR1_Joc\PR1_Joc\obj\Debug\net6.0\PR1_Joc.pdb
 C:\Users\raube\source\repos\PR1_Joc\PR1_Joc\obj\Debug\net6.0\PR1_Joc.genruntimeconfig.cache
 C:\Users\raube\source\repos\PR1_Joc\PR1_Joc\obj\Debug\net6.0\ref\PR1_Joc.dll
+C:\Users\raube\Desktop\JocPR1\PR1_Joc\bin\Debug\net6.0\PR1_Joc.exe
+C:\Users\raube\Desktop\JocPR1\PR1_Joc\bin\Debug\net6.0\PR1_Joc.deps.json
+C:\Users\raube\Desktop\JocPR1\PR1_Joc\bin\Debug\net6.0\PR1_Joc.runtimeconfig.json
+C:\Users\raube\Desktop\JocPR1\PR1_Joc\bin\Debug\net6.0\PR1_Joc.dll
+C:\Users\raube\Desktop\JocPR1\PR1_Joc\bin\Debug\net6.0\PR1_Joc.pdb
+C:\Users\raube\Desktop\JocPR1\PR1_Joc\obj\Debug\net6.0\PR1_Joc.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\raube\Desktop\JocPR1\PR1_Joc\obj\Debug\net6.0\PR1_Joc.AssemblyInfoInputs.cache
+C:\Users\raube\Desktop\JocPR1\PR1_Joc\obj\Debug\net6.0\PR1_Joc.AssemblyInfo.cs
+C:\Users\raube\Desktop\JocPR1\PR1_Joc\obj\Debug\net6.0\PR1_Joc.csproj.CoreCompileInputs.cache
+C:\Users\raube\Desktop\JocPR1\PR1_Joc\obj\Debug\net6.0\PR1_Joc.dll
+C:\Users\raube\Desktop\JocPR1\PR1_Joc\obj\Debug\net6.0\refint\PR1_Joc.dll
+C:\Users\raube\Desktop\JocPR1\PR1_Joc\obj\Debug\net6.0\PR1_Joc.pdb
+C:\Users\raube\Desktop\JocPR1\PR1_Joc\obj\Debug\net6.0\PR1_Joc.genruntimeconfig.cache
+C:\Users\raube\Desktop\JocPR1\PR1_Joc\obj\Debug\net6.0\ref\PR1_Joc.dll
