@@ -52,7 +52,10 @@ namespace PR1_Joc
                 {
                     default:
                         Console.WriteLine(MSG_Error_Parameters);
-                        break;
+                    option = Convert.ToInt32(Console.ReadLine());
+                    trys++;
+                    Console.Write(trys);
+                }
 
                     case 0:
                         started = false;
