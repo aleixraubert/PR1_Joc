@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace PR1_Joc
+namespace GameProject
 {
-    class Joc
+    class RaubertAleix
     {
         static void Main()
         {
@@ -91,7 +91,7 @@ namespace PR1_Joc
             double Boss_Health = 0, Boss_Attack = 0, Boss_Defense = 0;
             double Current_Archer_Health = 0, Current_Fighter_Health = 0, Current_Mage_Health = 0, Current_Druid_Health = 0;
 
-            int turns_archer=0, turns_fighter=0, turns_druid=0, turns_mage=0, boss_out=0;
+            int turns_archer=0, turns_fighter=0, turns_druid=0, turns_mage=0, boss_out=0, fighter_hability_counter=0;
 
             int option, trys, turn = 1;
 
@@ -101,10 +101,13 @@ namespace PR1_Joc
             bool Archer_Defensed = false, Fighter_Defensed = false, Mage_Defensed = false, Druid_Defensed = false, Monster_Knock_Out = false;
             bool Fighter_Use_Hability = false;
 
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine(MSG_Welcome);
 
             while (started) /* Bucle que permet tornar a jugar un cop finalitza la partida.*/
             {
+                game_started = true;
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine(MSG_Start);
 
                 option = Convert.ToInt32(Console.ReadLine());
@@ -126,10 +129,12 @@ namespace PR1_Joc
                     case 0:
                         started = false;
                         Console.WriteLine(MSG_END_CHOOSE);
+                        game_started = false;
                         break;
 
                     case 1:
 
+                        Console.ForegroundColor = ConsoleColor.Green;
                         /*Creació de personatges.*/
                         character_complete = false;
 
@@ -495,17 +500,21 @@ namespace PR1_Joc
                 }
                 Console.WriteLine();
 
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(MSG_Start_Game);
 
                 Console.WriteLine();
 
                 Archer_Hability = Fighter_Hability = Mage_Hability = Druid_Hability = true;
+                Fighter_Alive = Archer_Alive = Mage_Alive =  Druid_Alive = Boss_Alive = true;
+                turn = 1;
 
                 /* Bucle de la partida per torns. Cada iteració d'aquest bucle representa un torn al joc. */
                 while (game_started)
                 {
+                    Console.ForegroundColor = ConsoleColor.Magenta;
                     Console.WriteLine(MSG_Turn + turn + ":\n");
-
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     /* Torn Arquera */
                     if (Archer_Alive && Boss_Alive)
                     {
@@ -569,9 +578,11 @@ namespace PR1_Joc
                     }
                     else if (!Archer_Alive)
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine(MSG_Archer_Death);
                         Console.WriteLine();
                     }
+                    Console.ForegroundColor = ConsoleColor.Yellow;
 
                     /* Mateixa estrctura de codi que l'arquera per als altres 3 personatges. */
                     if (Fighter_Alive && Boss_Alive)
@@ -627,15 +638,18 @@ namespace PR1_Joc
                                 Fighter_Hability = false;
                                 Console.WriteLine(MSG_Fighter_Use_Hability);
                                 Fighter_Use_Hability = true;
+                                fighter_hability_counter = 3;
 
                                 break;
                         }
                     }
                     else if (!Fighter_Alive)
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine(MSG_Fighter_Death);
                         Console.WriteLine();
                     }
+                    Console.ForegroundColor = ConsoleColor.Yellow;
 
 
                     if (Mage_Alive && Boss_Alive)
@@ -705,9 +719,11 @@ namespace PR1_Joc
                     }
                     else if (!Mage_Alive)
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine(MSG_Mage_Death);
                         Console.WriteLine();
                     }
+                    Console.ForegroundColor = ConsoleColor.Yellow;
 
 
                     if (Druid_Alive && Boss_Alive)
@@ -793,12 +809,13 @@ namespace PR1_Joc
                                 if (Druid_Health > Current_Druid_Health) Druid_Health = Current_Druid_Health;
 
                                 Console.WriteLine(MSG_Druid_health + Druid_Health);
-
+                                Console.WriteLine();
                                 break;
                         }
                     }
                     else if (!Druid_Alive)
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine(MSG_Druid_Death);
                         Console.WriteLine();
                     }
@@ -807,11 +824,12 @@ namespace PR1_Joc
                     if (!Fighter_Alive && !Archer_Alive && !Mage_Alive && !Druid_Alive) /* Missatge de derrota si estan tots els herois morts. */
                     {
                         game_started = false;
-
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine(MSG_Loss);
                     }
                     else if (!Boss_Alive) /* Missatge de victòria si el monstre està mort. */
                     {
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine(MSG_Boss_Dead);
                         game_started = false;
 
@@ -819,13 +837,14 @@ namespace PR1_Joc
                     }
                     else if(Monster_Knock_Out) /* Missatge de que el monstre està noquejat i no pot atacar. */
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine(MSG_Boss_Knock_Out);
                         boss_out--;
                         if (boss_out == 0) Monster_Knock_Out = false;
                     }
                     else /* Atac del monstre */
                     {
-
+                        Console.ForegroundColor = ConsoleColor.White;
                         Console.WriteLine(MSG_Boss_Turn);
 
                         double Damage_Dealt;
@@ -863,10 +882,11 @@ namespace PR1_Joc
                         if (Fighter_Alive)
                         {
                             double temp=Fighter_Defense;
-                            if (Fighter_Use_Hability)
+                            if (fighter_hability_counter>0)
                             {
                                 Fighter_Defense = 100;
                                 Fighter_Use_Hability = false;
+                                fighter_hability_counter--;
                             }
 
                             Damage_Dealt = Boss_Attack - (Boss_Attack * (Fighter_Defense / 100));
@@ -961,25 +981,41 @@ namespace PR1_Joc
                     if(!Archer_Hability)
                     {
                         turns_archer++;
-                        if (turns_archer == cooldown_hability) Archer_Hability = true;
+                        if (turns_archer == cooldown_hability)
+                        {
+                            Archer_Hability = true;
+                            turns_archer = 0;
+                        }
                     }
 
                     if(!Fighter_Hability)
                     {
                         turns_fighter++;
-                        if (turns_fighter == cooldown_hability) Fighter_Hability = true;
+                        if (turns_fighter == cooldown_hability)
+                        {
+                            Fighter_Hability = true;
+                            turns_fighter = 0;
+                        }  
                     }
 
                     if(!Mage_Hability)
                     {
                         turns_mage++;
-                        if (turns_mage == cooldown_hability) Mage_Hability = true;
+                        if (turns_mage == cooldown_hability)
+                        {
+                            turns_mage = 0;
+                            Mage_Hability = true;
+                        }    
                     }
 
                     if(!Druid_Hability)
                     {
                         turns_druid++;
-                        if (turns_druid == cooldown_hability) Druid_Hability = true;
+                        if (turns_druid == cooldown_hability)
+                        {
+                            turns_druid = 0;
+                            Druid_Hability = true;
+                        }
                     }
 
                     /* Contador de torns */
