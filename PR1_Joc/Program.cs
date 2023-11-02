@@ -94,6 +94,7 @@ namespace PR1_Joc
             bool started=true, Archer_Hability = false, Fighter_Hability = false, Mage_Hability = false, Druid_Hability = false, character_complete, game_started=true;
             bool Fighter_Alive = true, Archer_Alive = true, Mage_Alive = true, Druid_Alive = true, Boss_Alive = true;
             bool Archer_Defensed = false, Fighter_Defensed = false, Mage_Defensed = false, Druid_Defensed = false, Monster_Knock_Out = false;
+            bool Fighter_Use_Hability = false;
 
             Console.WriteLine(MSG_Welcome);
 
@@ -588,6 +589,8 @@ namespace PR1_Joc
 
                             case 3:
                                 Fighter_Hability = false;
+                                Console.WriteLine(MSG_Fighter_Use_Hability);
+                                Fighter_Use_Hability = true;
 
                                 break;
                         }
@@ -781,7 +784,16 @@ namespace PR1_Joc
 
                         if (Fighter_Alive)
                         {
+                            double temp=Fighter_Defense;
+                            if (Fighter_Use_Hability)
+                            {
+                                Fighter_Defense = 100;
+                                Fighter_Use_Hability = false;
+                            }
+
                             Damage_Dealt = Boss_Attack - (Boss_Attack * (Fighter_Defense / 100));
+
+                            Fighter_Defense = temp;
 
                             if (Fighter_Defensed)
                             {
