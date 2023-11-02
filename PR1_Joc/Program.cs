@@ -99,7 +99,6 @@ namespace GameProject
             bool started=true, Archer_Hability = false, Fighter_Hability = false, Mage_Hability = false, Druid_Hability = false, character_complete, game_started=true;
             bool Fighter_Alive = true, Archer_Alive = true, Mage_Alive = true, Druid_Alive = true, Boss_Alive = true;
             bool Archer_Defensed = false, Fighter_Defensed = false, Mage_Defensed = false, Druid_Defensed = false, Monster_Knock_Out = false;
-            bool Fighter_Use_Hability = false;
 
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine(MSG_Welcome);
@@ -635,9 +634,7 @@ namespace GameProject
                                 break;
 
                             case 3:
-                                Fighter_Hability = false;
                                 Console.WriteLine(MSG_Fighter_Use_Hability);
-                                Fighter_Use_Hability = true;
                                 fighter_hability_counter = 3;
 
                                 break;
@@ -885,7 +882,6 @@ namespace GameProject
                             if (fighter_hability_counter>0)
                             {
                                 Fighter_Defense = 100;
-                                Fighter_Use_Hability = false;
                                 fighter_hability_counter--;
                             }
 
