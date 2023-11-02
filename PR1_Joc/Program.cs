@@ -71,6 +71,8 @@ namespace PR1_Joc
             const string MSG_Mage_Use_Hability = "La Maga ha utilitzat la seva habilitat!\n";
             const string MSG_Druid_Use_Hability = "El Druida ha utilitzat la seva habilitat!\n";
             const string MSG_Boss_Knock_Out = "El Monstre no pot atacar ja que està noquejat.\n";
+            const string MSG_Mage_Fireball = "La Maga llança una bola de foc i fa ";
+            const string MSG_All_Healed = "Tots els herois s'han curat 500 de vida!\n";
 
             const int MAX_Archer_Heath = 2000, MIN_Archer_Health = 1500, MAX_Archer_Attack = 300, MIN_Archer_Attack = 180, MAX_Archer_Defense = 40, MIN_Archer_Defense = 25;
             const int MAX_Fighter_Heath = 3750, MIN_Fighter_Health = 3000, MAX_Fighter_Attack = 250, MIN_Fighter_Attack = 150, MAX_Fighter_Defense = 45, MIN_Fighter_Defense = 35;
@@ -86,6 +88,7 @@ namespace PR1_Joc
             double Mage_Health = 0, Mage_Attack = 0, Mage_Defense = 0;
             double Druid_Health = 0, Druid_Attack = 0, Druid_Defense = 0;
             double Boss_Health = 0, Boss_Attack = 0, Boss_Defense = 0;
+            double Current_Archer_Health = 0, Current_Fighter_Health = 0, Current_Mage_Health = 0, Current_Druid_Health = 0;
 
             int turns_archer=0, turns_fighter=0, turns_druid=0, turns_mage=0, boss_out=0;
 
@@ -149,6 +152,7 @@ namespace PR1_Joc
                                     Archer_Health = Convert.ToDouble(Console.ReadLine());
                                     trys++;
                                 }
+                                Current_Archer_Health = Archer_Health;
                                 Console.WriteLine();
                             }
 
@@ -216,6 +220,8 @@ namespace PR1_Joc
                                     Fighter_Health = Convert.ToDouble(Console.ReadLine());
                                     trys++;
                                 }
+                                Current_Fighter_Health = Fighter_Health;
+
                                 Console.WriteLine();
                             }
 
@@ -283,6 +289,9 @@ namespace PR1_Joc
                                     Mage_Health = Convert.ToDouble(Console.ReadLine());
                                     trys++;
                                 }
+
+                                Current_Mage_Health = Mage_Health;
+
                                 Console.WriteLine();
                             }
 
@@ -350,6 +359,9 @@ namespace PR1_Joc
                                     Druid_Health = Convert.ToDouble(Console.ReadLine());
                                     trys++;
                                 }
+
+                                Current_Druid_Health = Druid_Health;
+
                                 Console.WriteLine();
                             }
 
@@ -653,8 +665,17 @@ namespace PR1_Joc
 
                             case 3:
                                 Mage_Hability = false;
+                                Console.WriteLine(MSG_Mage_Use_Hability);
 
+                                Damage_Dealt = Mage_Attack*3 - (Mage_Attack * (Boss_Defense / 100));
+                                Boss_Health -= Damage_Dealt;
+                                if (Boss_Health < 0)
+                                {
+                                    Boss_Health = 0;
+                                    Boss_Alive = false;
+                                }
 
+                                Console.WriteLine(MSG_Mage_Fireball + (Mage_Attack*3) + MSG_Damage + MSG_Boss_Defense + Damage_Dealt + MSG_Damage + MSG_Boss_health + Boss_Health);
                                 break;
                         }
                     }
@@ -716,7 +737,38 @@ namespace PR1_Joc
 
                             case 3:
                                 Druid_Hability = false;
+                                Console.WriteLine(MSG_Druid_Use_Hability);
 
+                                Console.WriteLine(MSG_All_Healed);
+
+                                if(Archer_Alive)
+                                {
+                                    Archer_Health += 500;
+                                    if(Archer_Health > Current_Archer_Health) Archer_Health = Current_Archer_Health;
+
+                                    Console.WriteLine(MSG_Archer_health + Archer_Health);
+                                }
+
+                                if (Fighter_Alive)
+                                {
+                                    Fighter_Health += 500;
+                                    if (Fighter_Health > Current_Fighter_Health) Fighter_Health = Current_Fighter_Health;
+
+                                    Console.WriteLine(MSG_Fighter_health + Fighter_Health);
+                                }
+
+                                if (Mage_Alive)
+                                {
+                                    Mage_Health += 500;
+                                    if (Mage_Health > Current_Mage_Health) Mage_Health = Current_Mage_Health;
+
+                                    Console.WriteLine(MSG_Mage_health + Mage_Health);
+                                }
+
+                                Druid_Health += 500;
+                                if (Druid_Health > Current_Druid_Health) Druid_Health = Current_Druid_Health;
+
+                                Console.WriteLine(MSG_Druid_health + Druid_Health);
 
                                 break;
                         }
