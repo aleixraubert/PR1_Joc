@@ -6,6 +6,7 @@ namespace PR1_Joc
     {
         static void Main()
         {
+            /* Declaració de Constants*/
             const string MSG_Welcome = "Benvingut a Herois vs Monstre!";
             const string MSG_Start = "Què vols fer?\n 1. Jugar!\n 0. Sortir";
             const string MSG_Action = "Selecciona l’acció: \n 1. Atacar\n 2. Protegir-se\n 3. Habilitat especial: ";
@@ -82,7 +83,7 @@ namespace PR1_Joc
             
             const int Max_Trys = 3, cooldown_hability=5;
 
-
+            /* Declaració de variables*/
             double Archer_Health = 0, Archer_Attack = 0, Archer_Defense = 0;
             double Fighter_Health = 0, Fighter_Attack = 0, Fighter_Defense = 0;
             double Mage_Health = 0, Mage_Attack = 0, Mage_Defense = 0;
@@ -94,6 +95,7 @@ namespace PR1_Joc
 
             int option, trys, turn = 1;
 
+            /* Declaració de booleans que ens a serveixen com a condicions de bucles i ifs.*/
             bool started=true, Archer_Hability = false, Fighter_Hability = false, Mage_Hability = false, Druid_Hability = false, character_complete, game_started=true;
             bool Fighter_Alive = true, Archer_Alive = true, Mage_Alive = true, Druid_Alive = true, Boss_Alive = true;
             bool Archer_Defensed = false, Fighter_Defensed = false, Mage_Defensed = false, Druid_Defensed = false, Monster_Knock_Out = false;
@@ -108,6 +110,7 @@ namespace PR1_Joc
                 option = Convert.ToInt32(Console.ReadLine());
                 trys = 1;
 
+                /* Comprobació de que el valor introduit sigui correcte amb un màxim de 3 intents. */
                 while(!(option==1 || option==0) && trys < Max_Trys)
                 {
                     Console.WriteLine(MSG_Error_Parameters);
@@ -143,6 +146,7 @@ namespace PR1_Joc
 
                                 Archer_Health = Convert.ToDouble(Console.ReadLine());
 
+                                /* Comprobació de que el valor introduit sigui correcte amb un màxim de 3 intents. */
                                 while ((Archer_Health < MIN_Archer_Health || Archer_Health > MAX_Archer_Heath) && trys < Max_Trys)
                                 {
 
@@ -162,6 +166,7 @@ namespace PR1_Joc
 
                                 Archer_Attack = Convert.ToDouble(Console.ReadLine());
 
+                                /* Comprobació de que el valor introduit sigui correcte amb un màxim de 3 intents. */
                                 while ((Archer_Attack < MIN_Archer_Attack || Archer_Attack > MAX_Archer_Attack) && trys < Max_Trys)
                                 {
 
@@ -180,6 +185,7 @@ namespace PR1_Joc
 
                                 Archer_Defense = Convert.ToDouble(Console.ReadLine());
 
+                                /* Comprobació de que el valor introduit sigui correcte amb un màxim de 3 intents. */
                                 while ((Archer_Defense < MIN_Archer_Defense || Archer_Defense > MAX_Archer_Defense) && trys < Max_Trys)
                                 {
 
@@ -211,6 +217,7 @@ namespace PR1_Joc
 
                                 Fighter_Health = Convert.ToDouble(Console.ReadLine());
 
+                                /* Comprobació de que el valor introduit sigui correcte amb un màxim de 3 intents. */
                                 while ((Fighter_Health < MIN_Fighter_Health || Fighter_Health > MAX_Fighter_Heath) && trys < Max_Trys)
                                 {
 
@@ -231,6 +238,7 @@ namespace PR1_Joc
 
                                 Fighter_Attack = Convert.ToDouble(Console.ReadLine());
 
+                                /* Comprobació de que el valor introduit sigui correcte amb un màxim de 3 intents. */
                                 while ((Fighter_Attack < MIN_Fighter_Attack || Fighter_Attack > MAX_Fighter_Attack) && trys < Max_Trys)
                                 {
 
@@ -249,6 +257,7 @@ namespace PR1_Joc
 
                                 Fighter_Defense = Convert.ToDouble(Console.ReadLine());
 
+                                /* Comprobació de que el valor introduit sigui correcte amb un màxim de 3 intents. */
                                 while ((Fighter_Defense < MIN_Fighter_Defense || Fighter_Defense > MAX_Fighter_Defense) && trys < Max_Trys)
                                 {
 
@@ -280,6 +289,7 @@ namespace PR1_Joc
 
                                 Mage_Health = Convert.ToDouble(Console.ReadLine());
 
+                                /* Comprobació de que el valor introduit sigui correcte amb un màxim de 3 intents. */
                                 while ((Mage_Health < MIN_Mage_Health || Mage_Health > MAX_Mage_Heath) && trys < Max_Trys)
                                 {
 
@@ -301,6 +311,7 @@ namespace PR1_Joc
 
                                 Mage_Attack = Convert.ToDouble(Console.ReadLine());
 
+                                /* Comprobació de que el valor introduit sigui correcte amb un màxim de 3 intents. */
                                 while ((Mage_Attack < MIN_Mage_Attack || Mage_Attack > MAX_Mage_Attack) && trys < Max_Trys)
                                 {
 
@@ -319,6 +330,7 @@ namespace PR1_Joc
 
                                 Mage_Defense = Convert.ToDouble(Console.ReadLine());
 
+                                /* Comprobació de que el valor introduit sigui correcte amb un màxim de 3 intents. */
                                 while ((Mage_Defense < MIN_Mage_Defense || Mage_Defense > MAX_Mage_Defense) && trys < Max_Trys)
                                 {
 
@@ -350,6 +362,7 @@ namespace PR1_Joc
 
                                 Druid_Health = Convert.ToDouble(Console.ReadLine());
 
+                                /* Comprobació de que el valor introduit sigui correcte amb un màxim de 3 intents. */
                                 while ((Druid_Health < MIN_Druid_Health || Druid_Health > MAX_Druid_Heath) && trys < Max_Trys)
                                 {
 
@@ -371,6 +384,7 @@ namespace PR1_Joc
 
                                 Druid_Attack = Convert.ToDouble(Console.ReadLine());
 
+                                /* Comprobació de que el valor introduit sigui correcte amb un màxim de 3 intents. */
                                 while ((Druid_Attack < MIN_Druid_Attack || Druid_Attack > MAX_Druid_Attack) && trys < Max_Trys)
                                 {
 
@@ -389,6 +403,7 @@ namespace PR1_Joc
 
                                 Druid_Defense = Convert.ToDouble(Console.ReadLine());
 
+                                /* Comprobació de que el valor introduit sigui correcte amb un màxim de 3 intents. */
                                 while ((Druid_Defense < MIN_Druid_Defense || Druid_Defense > MAX_Druid_Defense) && trys < Max_Trys)
                                 {
 
@@ -420,6 +435,7 @@ namespace PR1_Joc
 
                                 Boss_Health = Convert.ToDouble(Console.ReadLine());
 
+                                /* Comprobació de que el valor introduit sigui correcte amb un màxim de 3 intents. */
                                 while ((Boss_Health < MIN_Boss_Health || Boss_Health > MAX_Boss_Heath) && trys < Max_Trys)
                                 {
 
@@ -438,6 +454,7 @@ namespace PR1_Joc
 
                                 Boss_Attack = Convert.ToDouble(Console.ReadLine());
 
+                                /* Comprobació de que el valor introduit sigui correcte amb un màxim de 3 intents. */
                                 while ((Boss_Attack < MIN_Boss_Attack || Boss_Attack > MAX_Boss_Attack) && trys < Max_Trys)
                                 {
 
@@ -456,6 +473,7 @@ namespace PR1_Joc
 
                                 Boss_Defense = Convert.ToDouble(Console.ReadLine());
 
+                                /* Comprobació de que el valor introduit sigui correcte amb un màxim de 3 intents. */
                                 while ((Boss_Defense < MIN_Boss_Defense || Boss_Defense > MAX_Boss_Defense) && trys < Max_Trys)
                                 {
 
@@ -483,16 +501,19 @@ namespace PR1_Joc
 
                 Archer_Hability = Fighter_Hability = Mage_Hability = Druid_Hability = true;
 
+                /* Bucle de la partida per torns. Cada iteració d'aquest bucle representa un torn al joc. */
                 while (game_started)
                 {
                     Console.WriteLine(MSG_Turn + turn + ":\n");
 
+                    /* Torn Arquera */
                     if (Archer_Alive && Boss_Alive)
                     {
                         Console.WriteLine(MSG_Archer + MSG_Action + MSG_SP_Archer);
 
                         option = Convert.ToInt32(Console.ReadLine());
 
+                        /* Comprobació de que el valor introduit sigui correcte. */
                         while (!(option == 1 || option == 2 || option == 3))
                         {
                             Console.WriteLine(MSG_Error_Parameters);
@@ -501,17 +522,19 @@ namespace PR1_Joc
                             option = Convert.ToInt32(Console.ReadLine());
                         }
 
-                       while(!Archer_Hability && option==3)
-                       {
+                        /* Comprobació que la habilitat especial no estigui en cooldown. */
+                        while(!Archer_Hability && option==3)
+                        {
                             Console.WriteLine(MSG_Cooldown + (cooldown_hability-turns_archer));
                             Console.WriteLine();
                             Console.WriteLine(MSG_Archer + MSG_Action + MSG_SP_Archer);
                             option = Convert.ToInt32(Console.ReadLine());
-                       }
+                        }
 
+                        /* Switch que controla la acció que vol fer el jugador. */
                         switch (option)
                         {
-                            case 1:
+                            case 1: /*Atacar*/
 
                                 double Damage_Dealt;
                                 Damage_Dealt = Archer_Attack - (Archer_Attack * (Boss_Defense / 100));
@@ -527,7 +550,7 @@ namespace PR1_Joc
                                 Console.WriteLine();
                                 break;
 
-                            case 2:
+                            case 2: /* Protegir-se */
 
                                 Archer_Defense *= 2;
                                 Archer_Defensed = true;
@@ -536,7 +559,7 @@ namespace PR1_Joc
 
                                 break;
 
-                            case 3:
+                            case 3: /*Habilitat especial*/
                                 Archer_Hability = false;
                                 Console.WriteLine(MSG_Archer_Use_Hability);
                                 Monster_Knock_Out = true;
@@ -550,6 +573,7 @@ namespace PR1_Joc
                         Console.WriteLine();
                     }
 
+                    /* Mateixa estrctura de codi que l'arquera per als altres 3 personatges. */
                     if (Fighter_Alive && Boss_Alive)
                     {
                         Console.WriteLine(MSG_Fighter + MSG_Action + MSG_SP_Fighter);
@@ -779,33 +803,34 @@ namespace PR1_Joc
                         Console.WriteLine();
                     }
 
-
-                    if (!Fighter_Alive && !Archer_Alive && !Mage_Alive && !Druid_Alive)
+                    /* Torn del monstre */
+                    if (!Fighter_Alive && !Archer_Alive && !Mage_Alive && !Druid_Alive) /* Missatge de derrota si estan tots els herois morts. */
                     {
                         game_started = false;
 
                         Console.WriteLine(MSG_Loss);
                     }
-                    else if (!Boss_Alive)
+                    else if (!Boss_Alive) /* Missatge de victòria si el monstre està mort. */
                     {
                         Console.WriteLine(MSG_Boss_Dead);
                         game_started = false;
 
                         Console.WriteLine(MSG_Win);
                     }
-                    else if(Monster_Knock_Out)
+                    else if(Monster_Knock_Out) /* Missatge de que el monstre està noquejat i no pot atacar. */
                     {
                         Console.WriteLine(MSG_Boss_Knock_Out);
                         boss_out--;
                         if (boss_out == 0) Monster_Knock_Out = false;
                     }
-                    else
+                    else /* Atac del monstre */
                     {
 
                         Console.WriteLine(MSG_Boss_Turn);
 
                         double Damage_Dealt;
 
+                        /* Atac a l'arquera */
                         if (Archer_Alive)
                         {
                             Damage_Dealt = Boss_Attack - (Boss_Attack * (Archer_Defense / 100));
@@ -834,6 +859,7 @@ namespace PR1_Joc
 
                         Console.WriteLine();
 
+                        /* Atac al Bàrbar */
                         if (Fighter_Alive)
                         {
                             double temp=Fighter_Defense;
@@ -871,6 +897,7 @@ namespace PR1_Joc
 
                         Console.WriteLine();
 
+                        /* Atac a la Maga */
                         if (Mage_Alive)
                         {
                             Damage_Dealt = Boss_Attack - (Boss_Attack * (Mage_Defense / 100));
@@ -899,6 +926,7 @@ namespace PR1_Joc
 
                         Console.WriteLine();
 
+                        /* Atac al druida */
                         if (Druid_Alive)
                         {
                             Damage_Dealt = Boss_Attack - (Boss_Attack * (Druid_Defense / 100));
@@ -928,6 +956,8 @@ namespace PR1_Joc
 
 
                     }
+
+                    /* Cooldown de torns de les habilitats especials de cada personatge. */
                     if(!Archer_Hability)
                     {
                         turns_archer++;
@@ -951,18 +981,11 @@ namespace PR1_Joc
                         turns_druid++;
                         if (turns_druid == cooldown_hability) Druid_Hability = true;
                     }
-                        
 
-
+                    /* Contador de torns */
                     turn+=1;
                 }
-
-                        
-
             }
-            /*Console.WriteLine(MSG_Final);*/
-        }
-            
+        }    
     }
-
 }
