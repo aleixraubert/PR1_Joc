@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\raube\\source\\repos\\PR1_Joc\\PR1_Joc\\PR1_Joc.csproj",
+      "projectUniqueName": "C:\\Users\\raube\\Desktop\\JocPR1\\PR1_Joc\\PR1_Joc.csproj",
       "projectName": "PR1_Joc",
-      "projectPath": "C:\\Users\\raube\\source\\repos\\PR1_Joc\\PR1_Joc\\PR1_Joc.csproj",
+      "projectPath": "C:\\Users\\raube\\Desktop\\JocPR1\\PR1_Joc\\PR1_Joc.csproj",
       "packagesPath": "C:\\Users\\raube\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\raube\\source\\repos\\PR1_Joc\\PR1_Joc\\obj\\",
+      "outputPath": "C:\\Users\\raube\\Desktop\\JocPR1\\PR1_Joc\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\raube\\AppData\\Roaming\\NuGet\\NuGet.Config",
